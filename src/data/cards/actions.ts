@@ -6,7 +6,7 @@ export const [
   requestCardsFailure,
 ] = createAsyncActions(
   'cards',
-  (payload: void) => payload,
+  (payload: Partial<Record<keyof Card, string>> = {}) => payload,
   (payload: { cards: Card[] }) => payload,
   (error: Error) => error,
 );

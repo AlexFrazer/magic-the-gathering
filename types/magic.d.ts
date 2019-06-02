@@ -39,3 +39,10 @@ declare interface Card {
   }>;
   readonly id: string;
 }
+
+declare type MagicQuery<T> = Partial<Record<keyof T, string> & {
+  readonly pageSize: number;
+  readonly page: number;
+  readonly orderBy: string;
+  readonly contains: keyof T;
+}>;

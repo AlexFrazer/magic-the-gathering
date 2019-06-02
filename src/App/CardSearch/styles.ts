@@ -9,3 +9,10 @@ export const Container = styled.section`
   border-radius: 0 4px 4px 0;
   box-shadow: 0 6px 6px rgba(0,0,0,0.3);
 `;
+
+export const Form = styled.form`
+  display: flex;
+  & > * + * {
+    margin-left: 8px;
+  }
+`;

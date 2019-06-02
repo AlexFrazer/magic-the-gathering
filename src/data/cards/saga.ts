@@ -2,7 +2,16 @@ import { put, call, takeLatest } from 'redux-saga/effects';
 import api from '~/api';
 import * as actions from './actions';
 
-export function* requestCardsSaga() {
+export function* requestCardsSaga({
+  payload: {
+    page = 1,
+    pageSize = 20,
+    type = 'Creature',
+    orderBy = 'name',
+    contains = 'imageUrl',
+    ...params
+  },
+}: ReturnType<typeof actions.requestCards>) {
   try {
     const { data } = yield call(
       api,
@@ -10,11 +19,12 @@ export function* requestCardsSaga() {
       {
         method: 'GET',
         params: {
-          type: 'Creature',
-          pageSize: 20,
-          page: 1,
-          orderBy: 'name',
-          contains: 'imageUrl',
+          ...params,
+          type,
+          pageSize,
+          page,
+          orderBy,
+          contains,
         },
       },
     );

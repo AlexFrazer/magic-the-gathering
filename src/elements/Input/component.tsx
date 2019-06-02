@@ -1,12 +1,10 @@
 import * as React from 'react';
-import { v4 } from 'uuid';
+import { useId } from '~util/hooks';
 import styled from '@emotion/styled';
 
 export interface Props extends React.HTMLProps<HTMLInputElement> {
   readonly label: string;
 }
-
-const useId = () => React.useMemo<string>(v4, []);
 
 const Container = styled.div`
   display: flex;
