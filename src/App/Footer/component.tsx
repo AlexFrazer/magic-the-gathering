@@ -28,7 +28,7 @@ export default React.memo(function CardListFooter() {
   }, [history, location, page]);
   return (
     <Container>
-      {page > 2 && <Button type="button" onClick={prevPage}>Previous Page</Button>}
+      {page > 1 && <Button type="button" onClick={prevPage}>Previous Page</Button>}
       <Button type="button" onClick={nextPage}>Next Page</Button>
     </Container>
   );
