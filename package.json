@@ -88,7 +88,7 @@
     "@types/react-router-dom": "^4.3.3",
     "@types/redux-devtools-extension": "^2.13.2",
     "@types/uuid": "^3.4.4",
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "lodash": "^4.17.11",
     "mtgsdk": "^0.4.3",
     "react": "^16.8.6",
